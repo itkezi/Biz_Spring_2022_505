@@ -15,10 +15,10 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		
+
 		model.addAttribute("server", "안녕하세요" );
-		
 		return "home";
+	
 	}
 	
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      header #title {
+        background-color: yellow;
+        padding: 20px;
+      }
+      nav {
+        display: flex;
+        padding: 10px;
+        list-style: none;
+      }
+
+      nav table {
+        margin: auto;
+      }
+
+      table th,
+      table td {
+        border-collapse: collapse;
+      }
+
+      table th {
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+        background-color: #ddd;
+      }
+
+      table td {
+        border-bottom: 1px solid #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="title">고료 고교 학사 관리 2022 v1</div>
+      <nav>
+        <div>Home</div>
+        <div>학생정보</div>
+        <div>성적일람표</div>
+        <div>로그인</div>
+      </nav>
+    </header>
+    <section>
+      <table>
+        <tr>
+          <th>학번</th>
+          <th>이름</th>
+          <th>전공</th>
+          <th>학년</th>
+          <th>주소</th>
+          <th>전화번호</th>
+        </tr>
+        <tr>
+          <td>20210001</td>
+          <td>홍길동</td>
+          <td>컴퓨터공학</td>
+          <td>2</td>
+          <td>서울시 동대문구</td>
+          <td>02-222-1234</td>
+        </tr>
+        <tr>
+          <td>20210001</td>
+          <td>홍길동</td>
+          <td>컴퓨터공학</td>
+          <td>2</td>
+          <td>서울시 동대문구</td>
+          <td>02-222-1234</td>
+        </tr>
+      </table>
+      <button id="student_add">학생정보 추가</button>
+    </section>
+  </body>
+</html>

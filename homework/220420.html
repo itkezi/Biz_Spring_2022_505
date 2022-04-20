@@ -4,48 +4,251 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>고려고교</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap");
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        height: 100vh;
+        background-color: rgb(246, 246, 246);
+      }
 
-      header #title {
-        background-color: yellow;
+      header {
+        width: 100vw;
+      }
+      header #main {
+        overflow: hidden;
+        position: relative;
+        background-color: rgb(236, 236, 236);
         padding: 20px;
-      }
-      nav {
+        height: 260px;
         display: flex;
-        padding: 10px;
-        list-style: none;
+      }
+      header #main div {
+        height: 30px;
+      }
+      header #main #korea {
+        padding-left: 30px;
+        color: rgba(128, 128, 128, 0.523);
+        flex-grow: 0.3;
+        letter-spacing: -0.5px;
+        font-size: 20px;
+        font-weight: 700;
       }
 
-      nav table {
+      header #main #title {
+        z-index: 1;
+        letter-spacing: -1px;
+        word-spacing: -4px;
+        line-height: 250px;
+        font-size: 38px;
+        font-weight: 800;
+        margin-right: 10px;
+      }
+      header #main #ver {
+        color: rgba(96, 96, 96, 0.412);
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 266px;
+      }
+
+      header #main #circle {
+        animation: tracking-in-expand 1s ease-in-out 1s both;
+        background-color: rgba(255, 255, 255, 0.062);
+        position: absolute;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.097);
+        top: -10%;
+        left: 50%;
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+      }
+      header #main #circle2 {
+        animation: tracking-in-expand 2s ease-in-out 1.2s both;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.181);
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.067);
+        top: -50%;
+        left: 43%;
+        border-radius: 50%;
+        width: 700px;
+        height: 650px;
+      }
+
+      header #main #ko {
+        animation: tracking-in-contract-bck-top 1s
+          cubic-bezier(0.215, 0.61, 0.355, 1) both;
+        font-family: "Noto Serif TC", serif;
+        font-weight: 900;
+        font-size: 180px;
+        position: absolute;
+        top: -22%;
+        left: 66%;
+        border-radius: 50%;
+        width: 420px;
+        height: 420px;
+      }
+      header #main #rea {
+        animation: tracking-in-contract-bck-top 3s
+          cubic-bezier(0.215, 0.61, 0.355, 1) 0.3s both;
+        font-family: "Noto Serif TC", serif;
+        font-weight: 900;
+        font-size: 180px;
+        position: absolute;
+        top: 30%;
+        left: 79%;
+        border-radius: 50%;
+        width: 420px;
+        height: 420px;
+      }
+      header nav {
+        color: rgb(96, 96, 96);
+        font-weight: 400;
+        height: 50px;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.541);
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header nav div {
+        line-height: 50px;
+        text-align: center;
+        height: 50px;
+        width: 100px;
+      }
+
+      header nav div:hover {
+        background-color: rgba(88, 88, 88, 0.578);
+        animation: 1s ease-in 1;
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+      }
+
+      nav div:nth-of-type(1) {
+        margin-left: 120px;
+        color: black;
+        font-weight: 600;
+      }
+
+      nav div:nth-of-type(3) {
+        margin-inline-end: 300px;
+      }
+
+      nav div:last-of-type {
+        margin-right: 120px;
+        color: black;
+        font-weight: 600;
+      }
+
+      section {
+        position: relative;
+        background-color: rgb(246, 246, 246);
+        padding: 80px 50px;
         margin: auto;
+        width: 85%;
+        min-width: 700px;
+      }
+
+      table {
+        text-align: center;
+        border-collapse: collapse;
+        width: 100%;
       }
 
       table th,
       table td {
-        border-collapse: collapse;
+        padding: 15px 10px;
+        border-bottom: 1px solid rgb(206, 206, 206);
       }
 
       table th {
-        border-top: 1px solid #bbb;
-        border-bottom: 1px solid #bbb;
-        background-color: #ddd;
+        font-size: 15px;
+        border-top: 1px solid rgb(206, 206, 206);
+        background-color: rgba(233, 233, 233, 0.558);
       }
 
       table td {
-        border-bottom: 1px solid #bbb;
+        background-color: rgba(255, 255, 255, 0.577);
+        font-size: 14px;
+      }
+
+      #student_add {
+        color: rgb(69, 69, 69);
+        font-size: 15px;
+        font-weight: 700;
+        background-color: rgba(221, 221, 221, 0.558);
+        margin-top: 30px;
+        padding: 17px;
+        border: none;
+        float: right;
+        cursor: pointer;
+      }
+      #student_add:hover {
+        background-color: rgba(88, 88, 88, 0.579);
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.08);
+        color: rgb(255, 255, 255);
+      }
+
+      @keyframes tracking-in-expand {
+        0% {
+          letter-spacing: -0.5em;
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.6;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes tracking-in-contract-bck-top {
+        0% {
+          letter-spacing: 1em;
+          transform: translateZ(400px) translateY(-300px);
+          opacity: 0;
+        }
+        40% {
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateZ(0) translateY(0);
+          opacity: 1;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <div id="title">고료 고교 학사 관리 2022 v1</div>
+      <div id="main">
+        <div id="korea">KoreaHighSchool</div>
+        <div id="title">고려 고교 학사관리</div>
+        <div id="ver">2022v1</div>
+        <div id="circle2"></div>
+        <div id="circle"></div>
+        <div id="ko">高</div>
+        <div id="rea">麗</div>
+      </div>
       <nav>
         <div>Home</div>
         <div>학생정보</div>
@@ -72,12 +275,12 @@
           <td>02-222-1234</td>
         </tr>
         <tr>
-          <td>20210001</td>
-          <td>홍길동</td>
-          <td>컴퓨터공학</td>
-          <td>2</td>
-          <td>서울시 동대문구</td>
-          <td>02-222-1234</td>
+          <td>20210002</td>
+          <td>성춘향</td>
+          <td>전자공학</td>
+          <td>3</td>
+          <td>전라북도 익산시</td>
+          <td>063-111-1234</td>
         </tr>
       </table>
       <button id="student_add">학생정보 추가</button>

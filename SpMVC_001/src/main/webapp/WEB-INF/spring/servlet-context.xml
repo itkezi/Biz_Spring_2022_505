@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+		
+		<!-- < /> : self close (닫는 태그 불필요) -->
+		<context:component-scan base-package="com.callor.app"/>
+		<mvc:annotation-driven/>
+		
+		
+		<!--
+		<콩심기> 
+		InternalResourceResolver : jsp 파일을 읽어서 데이터를 덧붙이거나 랜더링하여 html코드로 바꿔주는 역할
+		(이 이후에 Dispatcher로 가는 것)
+		class로 지정해주면 server를 Run 하는 순간 객체로 생성되어 준비한다 
+		-->
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix"  value="/WEB-INF/views/"/>
+			<property name="suffix"  value=".jsp"/>
+		</bean>
+		
+
+</beans>

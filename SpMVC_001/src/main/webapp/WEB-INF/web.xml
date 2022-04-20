@@ -4,27 +4,23 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/root-context.xml</param-value>
-	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
 
 	<!-- Processes application requests -->
 	<servlet>
+		<!-- appServlet이라는 일종의 객체 -->
 		<servlet-name>appServlet</servlet-name>
+		<!-- http://localhost:8080/app/뒤의 내용의 위치를 아래 DispatcherServlet이 파악한다  -->
+		<!-- 사용자의 요청(Request)에서 url 패턴을 보고 servlet-name을 기반으로 파악하여 적절히 분해하는 역할  -->
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+			<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
 		</init-param>
+		
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>

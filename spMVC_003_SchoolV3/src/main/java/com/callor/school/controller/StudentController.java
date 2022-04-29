@@ -1,9 +1,11 @@
 package com.callor.school.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.callor.school.domain.StudentVO;
 import com.callor.school.service.StudentService;
 
 // Controller level에서 @RequestMapping을 설정하면
@@ -27,11 +29,11 @@ public class StudentController {
 	// null 값을 return 하면 Request Path와 같은 jsp 파일을 찾아서 rendering을 수행한다
 	// 단, @ResponseBody 설정이 없어야 한다.
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String list() {
+	public String list(Model model) {
 		// RequestMapping이 /Student/list이기 때문에
 		// return "Student/list"와 같다
+		model.addAttribute("ST_LIST", stService.selectAll());
 		return null;
-
 	}
 	
 	@RequestMapping(value = "/input", method = RequestMethod.GET)
@@ -40,8 +42,12 @@ public class StudentController {
 		
 	}
 
-	@RequestMapping(value = "/detail_view", method = RequestMethod.GET)
-	public String detail() {
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
+	public String detail(String stNum, Model model) {
+		
+		StudentVO stVO = stService.findByStNum(stNum);
+		model.addAttribute("ST", stVO);
+		
 		return null;
 		
 	}

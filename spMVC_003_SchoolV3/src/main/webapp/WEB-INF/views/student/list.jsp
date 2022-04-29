@@ -68,8 +68,11 @@ div.botton-box a:hover {
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6)
 }
 </style>
-
-<script src="${rootPath}/static/js/student.js?ver=2022-04-26-001"></script>
+<script>
+// JSP에서 사용하는 rootPath 변수 값을 JS에서 사용할 수 있도록 var 변수 선언
+	var rootPath = "${rootPath}"
+</script>
+<script src="${rootPath}/static/js/student.js?ver=2022-04-29-003"></script>
 
 <body>
 	<%@ include file="/WEB-INF/views/include/include_header.jsp"%>
@@ -83,7 +86,7 @@ div.botton-box a:hover {
 				<th>학과</th>
 				<th>학년</th>
 			</tr>
-			<c:forEach items="${STUDENTS}" var="stVO">
+			<c:forEach items="${ST_LIST}" var="stVO">
 				<tr>
 					<td >${stVO.stNum}</td>
 					<td class="name" data-num="${stVO.stNum}">${stVO.stName}</td>

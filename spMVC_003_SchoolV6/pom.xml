@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.callor</groupId>
 	<artifactId>school</artifactId>
-	<name>spMVC_003_SchoolV5</name>
+	<name>spMVC_003_SchoolV6</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
@@ -33,12 +33,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-jdbc</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -63,16 +57,6 @@
 			<artifactId>ojdbc8</artifactId>
 			<version>21.5.0.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.29</version>
-		</dependency>
-
-
-
-
 
 
 		<!-- AspectJ -->
@@ -82,7 +66,6 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-		<!-- 콘솔에 메시지를 보여주는 -->
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -95,7 +78,13 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.2.11</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- Servlet -->
 		<dependency>

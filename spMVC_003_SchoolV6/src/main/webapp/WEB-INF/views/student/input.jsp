@@ -6,33 +6,52 @@
 <Style>
 form {
 	width: 95%;
-	margin : 5px auto;
+	margin: 5px auto;
 }
 
 form div {
+	display: flex;
+	margin: 5px auto;
 	width: 80%;
-	margin : 7px 0;
+	width: 80%;
 }
 
 form label, form input {
-	display: inline-block;
 	padding: 8px;
 }
 
 form label {
-	width: 30%;
+	flex: 1;
 	text-align: right;
+	display: flex;
 }
 
 form input {
+	flex: 3;
 	width: 65%;
-	margin-left: 5px;
+/* 	margin-left: 5px; */
 }
 
 form div:last-of-type {
-	text-align:right;
+	justify-content: flex-end;
+/* 	margin: 10px auto; */
 }
+
+form div:first-of-type input{
+flex:2;
+/* margin-right:10px; */
+}
+
+form div:first-of-type button{
+flex:1;
+}
+
+
 </Style>
+<script>
+const rootPath = "${rootPath}"
+</script>
+<script src="${rootPath}/static/js/std_input.js?ver=2022-05-10-014"></script>
 
 <h1>학생정보 등록</h1>
 
@@ -40,6 +59,7 @@ form div:last-of-type {
 <form method="POST">
 	<div>
 		<label> 학번 </label> <input type="text" name="st_num">
+		<button type="button" class="btn-green std-num-check" >중복검사</button>
 	</div>
 	<div>
 		<label> 이름 </label> <input type="text" name="st_name">
@@ -54,9 +74,9 @@ form div:last-of-type {
 		<label> 전화번호 </label> <input type="text" name="st_tel">
 	</div>
 	<div>
-		<label> 주소 </label> <input type="text" name="st_num">
+		<label> 주소 </label> <input type="text" name="st_addr">
 	</div>
 	<div>
-		<button>저장</button>
+		<button type="button" class="btn-blue std-save">저장</button>
 	</div>
 </form>

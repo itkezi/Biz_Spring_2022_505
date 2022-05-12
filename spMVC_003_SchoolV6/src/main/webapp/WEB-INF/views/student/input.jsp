@@ -11,9 +11,10 @@ form {
 
 form div {
 	display: flex;
-	margin: 5px auto;
+	margin: auto;
 	width: 80%;
 	width: 80%;
+	margin-bottom: 5px;
 }
 
 form label, form input {
@@ -29,37 +30,50 @@ form label {
 form input {
 	flex: 3;
 	width: 65%;
-/* 	margin-left: 5px; */
+	margin-left: 5px;
 }
 
 form div:last-of-type {
 	justify-content: flex-end;
-/* 	margin: 10px auto; */
+	margin: 10px auto;
+	
 }
 
-form div:first-of-type input{
-flex:2;
-/* margin-right:10px; */
+form div:first-of-type div {
+	flex: 3;
+	margin: 0;
 }
 
-form div:first-of-type button{
-flex:1;
+form div:first-of-type input {
+	flex: 2;
+	margin: 0;
+}
+
+form div:first-of-type input {
+	flex: 2;
+	margin-right: 5px;
 }
 
 
+form div:first-of-type button {
+	flex: 1;
+}
 </Style>
 <script>
-const rootPath = "${rootPath}"
+	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/static/js/std_input.js?ver=2022-05-10-014"></script>
+<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-12-002"></script>
+
+<script src="${rootPath}/static/js/std_input.js?ver=2022-05-12-004"></script>
 
 <h1>학생정보 등록</h1>
-
-
 <form method="POST">
 	<div>
-		<label> 학번 </label> <input type="text" name="st_num">
-		<button type="button" class="btn-green std-num-check" >중복검사</button>
+		<label> 학번 </label>
+		<div>
+			<input type="text" name="st_num">
+			<button type="button" class="btn-green std-num-check">중복검사</button>
+		</div>
 	</div>
 	<div>
 		<label> 이름 </label> <input type="text" name="st_name">

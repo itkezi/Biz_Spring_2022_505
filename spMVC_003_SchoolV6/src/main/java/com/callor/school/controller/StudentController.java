@@ -1,5 +1,9 @@
 package com.callor.school.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,15 +11,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.callor.school.model.StudentVO;
+import com.callor.school.service.StudentService;
 
 @Controller
 @RequestMapping(value = "/student")
 public class StudentController {
 
+	// Setter 주입
+	@Autowired
+	@Qualifier("stServiceV1")
+	private StudentService stService;
+
 	// localhost:8080/school/student 또는
 	// localhost:8080/school/student/
 	@RequestMapping(value = { "", "/" }, method = RequestMethod.GET)
 	public String list(Model model) {
+		List<StudentVO> stList = stService.selectAll();
+		model.addAttribute("ST_LIST", stList);
 		model.addAttribute("LAYOUT", "ST_LIST");
 
 		return "home";
@@ -49,7 +61,13 @@ public class StudentController {
 	@ResponseBody
 	@RequestMapping(value = "/st_num_check", method = RequestMethod.GET)
 	public String st_num_check(String st_num) {
-		return "Hello_Korea";
+
+		StudentVO stVO = stService.findByNum(st_num);
+		if (stVO == null) {
+			return "NOT";
+		}
+		return "USE";
+
 	}
 
 }

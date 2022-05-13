@@ -5,66 +5,61 @@
 <c:set value="${pageContext.request.contextPath}" var="rootPath" />
 <Style>
 form {
-	width: 95%;
+	width: 80%;
 	margin: 5px auto;
 }
-
-form div {
-	display: flex;
-	margin: auto;
-	width: 80%;
-	width: 80%;
-	margin-bottom: 5px;
+fieldset {
+	border: 1px solid blue;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 20px;
 }
-
+legend {
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+}
+form div {
+	width: 80%;
+	margin: 5px auto;
+	display: flex;
+}
 form label, form input {
 	padding: 8px;
 }
-
 form label {
 	flex: 1;
+	color: blue;
+	font-weight: bold;
 	text-align: right;
-	display: flex;
 }
-
 form input {
 	flex: 3;
-	width: 65%;
 	margin-left: 5px;
 }
-
 form div:last-of-type {
 	justify-content: flex-end;
 	margin: 10px auto;
-	
 }
-
 form div:first-of-type div {
 	flex: 3;
-	margin: 0;
+	margin:0px;
 }
-
 form div:first-of-type input {
-	flex: 2;
-	margin: 0;
+	flex:1;	
+	margin:0px;
 }
-
-form div:first-of-type input {
-	flex: 2;
-	margin-right: 5px;
-}
-
-
 form div:first-of-type button {
-	flex: 1;
+	margin-left:5px;
 }
+
 </Style>
 <script>
 	const rootPath = "${rootPath}"
 </script>
-<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-12-002"></script>
+<script src="${rootPath}/static/js/std_input_save.js?ver=2022-05-13-004"></script>
 
-<script src="${rootPath}/static/js/std_input.js?ver=2022-05-12-004"></script>
+<script src="${rootPath}/static/js/std_input.js?ver=2022-05-13-004"></script>
 
 <h1>학생정보 등록</h1>
 <form method="POST">

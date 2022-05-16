@@ -1,4 +1,4 @@
-const std_num_check_callback_cb = () => {
+const std_num_check_cb = () => {
   const st_num = document.querySelector("input[name='st_num']");
   if (st_num.value === "") {
     alert("중복검사를 하려면 학번을 먼저 입력하세요");
@@ -6,7 +6,7 @@ const std_num_check_callback_cb = () => {
     return false;
   }
   // alert("입력한 학번 : " + st_num.value);
-  if (!std_num_check_callback_cb(st_num.value)) {
+  if (!st_num_fetch(st_num.value)) {
     st_num.focus();
   }
 };
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const std_num_check = document.querySelector("button.std-num-check");
 
   if (std_num_check) {
-    std_num_check.addEventListener("click", std_num_check_callback_cb); // end callback
+    std_num_check.addEventListener("click", std_num_check_cb); // end callback
   }
 
   // 현재 html 화면에 있는 클래스가 std-save인 버튼을 챙겨서

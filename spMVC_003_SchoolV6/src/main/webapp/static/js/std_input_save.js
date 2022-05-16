@@ -1,3 +1,21 @@
+/*
+  비동기 방식의 코드문제로
+  return flase 또는 return true가 실행되지 않는 문제를 해결하기 위하여
+  promise(약속, 보장) 방식으로 코드를 변경한다
+  함수 선언문제 async 키워드를 부착
+  실행 순서를 임의로 조절하기 위하여 각 함수 호출문에 await 키워드를 부착한다
+*/
+const st_num_fetchV2 = async (st_num) => {
+  const res = await fetch(`${rootPath}/student/st_num_check?st_num=${st_num}`);
+  const result = await res.text();
+
+  if (result === "USE") {
+    return false;
+  } else {
+    return true;
+  }
+};
+
 const st_num_fetch = (st_num) => {
   fetch(`${rootPath}/student/st_num_check?st_num=${st_num}`)
     .then((res) => res.text())
@@ -9,10 +27,13 @@ const st_num_fetch = (st_num) => {
         alert("사용 가능한 학번입니다.");
         return true;
       }
-    });
+    }); // end fetch
+  // fetch가 완료되기 전에 실행되어 st_num_fetch가 종료됨
+  // 이 함수가 ture나 false를 return 할 것으로 기대하고
+  // 작성을 했으나
 };
 
-const save_cb = () => {
+const save_cb = async () => {
   const st_num = document.querySelector("input[name='st_num']");
   const st_name = document.querySelector("input[name='st_name']");
   const st_dept = document.querySelector("input[name='st_dept']");
@@ -29,9 +50,22 @@ const save_cb = () => {
     return false;
   }
 
-  const st_num_yes = st_num_fetch(st_num.value);
+  // st_num_yes에 true나 false가 담길 것으로 기대하고 있다
+  // st_num_fetchV2(st_num.value).then((st_num_yes) => {
+  //   console.log("st_num_yes : ", st_num_yes);
+  //   // false가 담기면 학번항목을 clear하고 focus()를 담는다
+  //   // 중복된 학번일 경우가 해당
+  //   if (!st_num_yes) {
+  //     st_num.value = "";
+  //     st_num.focus();
+  //     return false;
+  //   }
+  // });
+
+  const st_num_yes = await st_num_fetchV2(st_num.value);
+  console.log("st_num_yes", st_num_yes);
   if (!st_num_yes) {
-    st_num.value = "";
+    alert("이미 등록된 학번입니다\n다시 확인하세요");
     st_num.focus();
     return false;
   }

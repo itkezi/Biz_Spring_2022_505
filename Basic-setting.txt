@@ -1,0 +1,93 @@
+<2022-05-25 기준>
+
+-----------------------------------------------------------
+[pom.xml]
+
+- java version : 11
+
+- spring version [maven - spring] : 5.2.22.RELEASE
+ 
+- slf4j version [maven - slf4j] : 1.7.36
+
+- maven compiler
+  - version [maven - maven compiler] : 3.8.1
+  - source : ${java-version}
+  - target : ${java-version}
+
+- Loggin 첫번째 빼고, inject 삭제
+
+- [maven - logback] : 1.2.11
+	<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+	<dependency>
+  	  <groupId>ch.qos.logback</groupId>
+   	 <artifactId>logback-classic</artifactId>
+   	 <version>1.2.11</version>
+	</dependency>
+
+-----------------------------------------------------------
+
+[home.jsp]
+- 삭제 후 재생성
+
+-----------------------------------------------------------
+[pom.xml]
+
+- [maven - lombok] : 1.18.24 : logback 뒤에 붙이기
+	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+	<dependency>
+  	  <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.24</version>
+	    <scope>provided</scope>
+	</dependency>
+
+-----------------------------------------------------------
+[HomeController.java]
+
+	@Slf4j
+	@Controller
+	public class HomeController {
+	
+		@RequestMapping(value = "/", method = RequestMethod.GET)
+		public String home(Locale locale, Model model) {
+			log.debug("반갑습니다 여기는 home입니다");
+			return "home";
+		}
+	
+	}
+
+
+-----------------------------------------------------------
+[/src/test/resources]
+
+- logback-test.xml 생성
+- 쌤 github : Reference/Setting/logback/logback-test(UTF-8-new).xml
+
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<configuration scan="true" scanPeriod="3 seconds">
+	
+  	 <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+   	     <encoder>
+   	         <charset>UTF-8</charset>
+   	         <Pattern>  [%-5level] %C{5} - %msg  %n</Pattern>
+  	      </encoder>
+  	  </appender>
+
+ 	   <logger name="org.springframework" level="INFO" />
+  	  <logger name="com.callor.school" level="DEBUG"  additivity="false">
+    	  	<appender-ref ref="STDOUT"/>
+  	  </logger>
+
+  	  <root level="INFO">
+       	 <appender-ref ref="STDOUT"/>
+  	  </root>
+
+	</configuration>
+
+
+
+
+
+
+
+

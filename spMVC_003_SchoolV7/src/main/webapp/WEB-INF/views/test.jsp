@@ -8,11 +8,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home.jsp</title>
-<link rel="icon" href="${rootPath}/static/Images/favicon.ico" type="image/x-icon"/>
+<title>Insert title here</title>
 </head>
 <body>
-<h1>반갑습니다</h1>
-<a href="${rootPath}/user/login" >로그인 바로가기</a>
+
 </body>
 </html>

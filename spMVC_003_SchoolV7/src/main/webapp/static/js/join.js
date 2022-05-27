@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const id_check = document.querySelector("button.id-check");
   const join_btn = document.querySelector("button.join");
+  const join_form = document.querySelector("form.join");
 
   const index = {
     username: 0,
@@ -24,31 +25,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const username_msg = document.querySelector("div.username");
 
+  const username_isBlank = () => {
+    username_msg.classList.remove("ok");
+
+    /*
+    JS코드를 사용하여 여러가지 style을 변경하고자 할 때
+    일일이 style 항목을 변경하는 방법이 있지만
+    미리 본문의 style 항목에 사용하지 않는 class 하나 만들어두고
+    속성을 미리 작성해둔다
+    그리고 해당 항목에 classList.add("class 명")과 같이
+    사용하면 여러가지 미리 설정한 속성이 적용된다
+
+    username_msg.style.color="red";
+    */
+
+    // div.username 항목에 warn 이라는 class를 덧붙여라
+    username_msg.classList.add("warn");
+    username_msg.innerText = " * USER NAME을 입력해주세요 ";
+    username.focus();
+    return false;
+  };
+
+  // join button 클릭
+  if (join_btn) {
+    join_btn.addEventListener("click", () => {
+      if (username.value === "") {
+        username_isBlank();
+        return false;
+      }
+      if (password.value === "") {
+        alert("비밀번호를 입력해 주세요");
+        password.focus;
+        return false;
+      }
+      if (re_password.value === "") {
+        alert("비밀번호 확인을 입력해 주세요");
+        re_password.focus();
+        return false;
+      }
+      if (password.value !== re_password.value) {
+        alert("비밀번호와 비밀번호 확인 값이 서로 다릅니다");
+        password.value = "";
+        re_password.value = "";
+        password.focus();
+        return false;
+      }
+
+      // 유효성 검사 종료
+      // form에 담긴 데이터를 서버로 전송한다
+      join_form.submit();
+    });
+  }
+
   if (id_check) {
     id_check.addEventListener("click", () => {
       if (username.value === "") {
-        username_msg.classList.remove("ok");
-
-        /*
-        JS코드를 사용하여 여러가지 style을 변경하고자 할 때
-        일일이 style 항목을 변경하는 방법이 있지만
-        미리 본문의 style 항목에 사용하지 않는 class 하나 만들어두고
-        속성을 미리 작성해둔다
-        그리고 해당 항목에 classList.add("class 명")과 같이
-        사용하면 여러가지 미리 설정한 속성이 적용된다
-
-        username_msg.style.color="red";
-        */
-
-        // div.username 항목에 warn 이라는 class를 덧붙여라
-        username_msg.classList.add("warn");
-        username_msg.innerText = " * USER NAME을 입력해주세요 ";
-        username.focus();
+        username_isBlank();
         return false;
       } // end if
 
+      // queryString 방식으로 요청
+      // localhost:8080/school/user/idcheck?username=itkezi
+      // URL(주소창)에 서버 보내는 변수이름(username)이 노출되는 문제가 있다
+      // 보내는 데이터 길이에 제한이 있다
+      //
+      // URL, PathVarriable 방식으로 데이터(검사하고자 하는 username)를 전송하기
+      // localhost:8080/school/user/idcheck/itkezi 로 요청하기
       fetch(`${rootPath}/user/idcheck/${username.value}`)
-        .then((res) => res.text())
+        .then((res) => {
+          console.table(index);
+          console.table(res);
+          return res.text();
+        })
         .then((result) => {
           if (result === "ok") {
             username_msg.classList.remove("warn");

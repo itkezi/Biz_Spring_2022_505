@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.cho</groupId>
+	<groupId>com.callor</groupId>
 	<artifactId>school</artifactId>
 	<name>SpMVC003_SchoolV7</name>
 	<packaging>war</packaging>

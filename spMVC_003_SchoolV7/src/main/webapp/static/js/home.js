@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // 실제 event가 설정된 tag, nav tag
       const current = event.currentTarget;
       // 가장 안쪽에서 실제 클릭된 tag, li tag
+      
       const li = e.target;
       if (li.tagName === "LI") {
         const text = li.innerText;

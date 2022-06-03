@@ -35,6 +35,10 @@ nav li:hover {
 	background-color: #333;
 	cursor: pointer;
 }
+a {
+	color : inherit;
+	text-decoration: none;
+}
 </style>
 <script>
 	const rootPath = "${rootPath}"
@@ -50,7 +54,7 @@ nav li:hover {
 		<ul>
 			<li>Home</li>
 			<li>공지사항</li>
-			<li>자유게시판</li>
+			<li><a href="${rootPath}/tour">자유게시판</a></li>
 
 			<c:choose>
 				<c:when test="${empty USER}">

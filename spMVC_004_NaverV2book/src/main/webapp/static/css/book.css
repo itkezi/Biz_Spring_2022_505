@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.book {
+	margin : 0 auto;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+}
+.book div, .book table {
+margin : 20px 0;
+}
+
+.book a {
+	text-decoration: none;
+	color : inherit;
+	border: 1px solid green;
+}
+
+.add {
+	text-align: center;
+}
+
+.num {
+	text-align: center;
+}

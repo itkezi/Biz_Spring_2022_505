@@ -19,4 +19,10 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/tour", method = RequestMethod.GET)
+	public String tour(Locale locale, Model model) {
+		log.debug("TOUR TEST");
+		return "/tour";
+	}
+	
 }

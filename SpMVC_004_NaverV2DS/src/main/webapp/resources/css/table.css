@@ -11,8 +11,7 @@ table.list2 {
 	border-spacing : 0;
 	display : table;
 	border:1px solid #eee;
-	width: 1030px;
-	margin : 150px auto;
+	margin : 150px;
 	text-align: center;
 }
 table.detail {

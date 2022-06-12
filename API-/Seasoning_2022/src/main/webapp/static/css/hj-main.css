@@ -1,0 +1,80 @@
+@charset "UTF-8";
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+.hj-main {
+	position: relative;
+	width: 98%;
+	height: 98%;
+	width: 98%;
+	margin: auto;
+}
+
+video {
+	position:absolute;
+	width : 100%;
+	height: 100%;
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	width: 100%;
+	/* -webkit-backface-visibility: hidden; */
+	/* -moz-backface-visibility: hidden; */
+}
+
+.hj-video-etr {
+	z-index: 50; 
+}
+
+.hj-video-fb, .hj-video-bb, .hj-video-vb {
+/* 	z-index: 70; */
+	display: none;
+}
+
+.hj-a {
+text-align:center;
+	position: absolute;
+	padding: 12px 16px;
+	z-index: 100;
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+	font-size: 22px;
+	font-weight: 800;
+	border: 1.5px solid rgba(45,56,77);
+	border-radius: 10px;
+	transform: translate(-50%, -50%);
+	top: 78%;
+	box-shadow: 2px 2px 2px rgba(45,56,77,0.2);
+}
+
+.hj-a:hover {
+	background-color: rgba(45,56,77);
+	color : white;
+	transition : 0.5s;
+}
+
+.hj-a p {
+margin-top: 8px;
+font-size: 16px;
+font-weight: 500;
+}
+
+.hj-a-fb {
+	left: 25%;
+}
+
+.hj-a-bb {
+	left: 50%;
+}
+
+.hj-a-vb {
+	left: 75%;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace : Dao 인터페이스와 연결하여 mybatis로 하여금 클래스를 작성하도록 하기 위한 설정 -->
+<mapper namespace="com.seasoning.app.persistence.BaseBallDao">
+	<select id="selectJun" resultType="BaseBallScheduleVO">		
+		SELECT D.st_date, D.st_match
+		FROM tbl_bb_stadium ST
+		    LEFT JOIN tbl_schedule_dusan D
+		        ON ST.st_pk = D.st_pk        
+		        WHERE D.st_date LIKE '%6월%'
+		ORDER BY st_seq
+	</select>
+
+	<select id="selectJul" resultType="BaseBallScheduleVO">		
+		SELECT D.st_date, D.st_match
+		FROM tbl_bb_stadium ST
+		    LEFT JOIN tbl_schedule_dusan D
+		        ON ST.st_pk = D.st_pk        
+		        WHERE D.st_date LIKE '%7월%'
+		ORDER BY st_seq
+	</select>
+
+	<select id="selectAug" resultType="BaseBallScheduleVO">		
+		SELECT D.st_date, D.st_match
+		FROM tbl_bb_stadium ST
+		    LEFT JOIN tbl_schedule_dusan D
+		        ON ST.st_pk = D.st_pk        
+		        WHERE D.st_date LIKE '%8월%'
+		ORDER BY st_seq
+	</select>
+
+	<select id="selectSept" resultType="BaseBallScheduleVO">		
+		SELECT D.st_date, D.st_match
+		FROM tbl_bb_stadium ST
+		    LEFT JOIN tbl_schedule_dusan D
+		        ON ST.st_pk = D.st_pk        
+		        WHERE D.st_date LIKE '%9월%'
+		ORDER BY st_seq
+	</select>
+
+</mapper>

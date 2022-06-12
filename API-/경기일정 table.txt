@@ -1,0 +1,26 @@
+<table class="w3-table-all books">
+		<colgroup>
+			<col width="100px">
+			<col width="100px">
+			<col width="300px">
+		</colgroup>
+
+		<thead>
+			<tr>
+				<th>날짜</th>
+				<th>시간</th>
+				<th>매치업</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<c:forEach items="${FB}" var="FB">
+				<tr>
+					<td>${FB.fb_st_date}</td>
+					<td>${FB.fb_st_time}</td>
+					<td>${FB.fb_st_match}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+
+	</table>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace : Dao 인터페이스와 연결하여 mybatis로 하여금 클래스를 작성하도록 하기 위한 설정 -->
+<mapper namespace="com.seasoning.app.persistence.FootBallDao">
+	<select id="selectAll" resultType="FootBallScheduleVO">
+		SELECT S.fb_st_date, S.fb_st_time, S.fb_st_match
+		FROM tbl_fb_stadium ST
+		    LEFT JOIN tbl_fb_schedule_seoul S
+		        ON ST.fb_st_pk = S.fb_st_pk
+		        WHERE ST.fb_st_pk ='fb_seoul'
+		ORDER BY fb_st_seq
+	</select>
+</mapper>

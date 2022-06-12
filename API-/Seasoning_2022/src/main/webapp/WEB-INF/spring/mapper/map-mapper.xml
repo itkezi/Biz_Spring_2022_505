@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace : Dao 인터페이스와 연결하여 mybatis로 하여금 클래스를 작성하도록 하기 위한 설정 -->
+<mapper namespace="com.seasoning.app.persistence.MapDao">
+	<select id="selectAll" resultType="MapVO">
+		SELECT bb_st_x, bb_st_y
+		FROM tbl_bb_stadium
+		WHERE st_pk LIKE '%bb_dusan%'
+	</select>
+</mapper>

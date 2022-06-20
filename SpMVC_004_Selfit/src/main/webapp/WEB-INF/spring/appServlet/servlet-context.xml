@@ -29,9 +29,9 @@
 
 
 	
-	<context:component-scan base-package="com.callor.naver.controller" />
-	<context:component-scan base-package="com.callor.naver.service.impl" />
-	<context:component-scan base-package="com.callor.naver.config" />
+	<context:component-scan base-package="com.callor.images.controller" />
+	<context:component-scan base-package="com.callor.images.service.impl" />
+	<context:component-scan base-package="com.callor.images.config" />
 	
 	
 </beans:beans>

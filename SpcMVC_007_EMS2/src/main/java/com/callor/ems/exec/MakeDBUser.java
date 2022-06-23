@@ -10,7 +10,7 @@ import java.util.TreeMap;
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 
-public class MakeNaverUser {
+public class MakeDBUser {
 
 	public static void main(String[] args) {
 		
@@ -37,7 +37,10 @@ public class MakeNaverUser {
 
 		Map<String, String[]> secFiles = new TreeMap<String, String[]>();
 
-		secFiles.put("naver.email.properties", new String[] { "naver.username", "naver.password" });
+		secFiles.put("db.connection.properties", new String[] { "mysql.username", "mysql.password" });
+
+		System.out.println(secFiles.get("db.connection.properties")[0]);
+		System.out.println(secFiles.get("db.connection.properties")[1]);
 
 		Set<String> files = secFiles.keySet();
 
@@ -60,8 +63,7 @@ public class MakeNaverUser {
 
 				out.flush();
 				out.close();
-				
-				System.out.println("File Write OK");
+				System.out.println("File Write OK!!!");
 
 			} catch (FileNotFoundException e) {
 			}

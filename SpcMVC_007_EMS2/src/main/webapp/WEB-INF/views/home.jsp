@@ -28,7 +28,6 @@ span {
 </style>
 </head>
 <body>
-<h1>HOME</h1>
 <section class="main">
 	<form:form modelAttribute="emsVO"> 
 		

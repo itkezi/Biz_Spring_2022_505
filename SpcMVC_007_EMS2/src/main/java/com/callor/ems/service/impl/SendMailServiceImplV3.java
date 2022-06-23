@@ -54,7 +54,7 @@ public class SendMailServiceImplV3 extends SendMailServiceImplV1{
 		while(scan.hasNext()) {
 			String line = scan.nextLine();
 			
-			line = line.replace("@email",emsVO.getE_to_email());
+			line = line.replace("@email",userVO.getUsername());
 			bodyText.append(line);
 		}
 		

@@ -49,6 +49,13 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.3.13.RELEASE</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -139,7 +146,7 @@
 			<artifactId>jasypt</artifactId>
 			<version>${org.jasypt-version}</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.jasypt/jasypt-spring31 -->
 		<dependency>
 			<groupId>org.jasypt</groupId>

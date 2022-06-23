@@ -16,7 +16,10 @@
  <mapper namespace="com.callor.ems.persistance.UserDao">
  
  	<select id="selectAll"></select>
- 	<select id="findById"></select>
+ 	
+ 	<select id="findById" resultType="UserVO">
+ 		SELECT * FROM tbl_users WHERE username = #{username}
+ 	</select>
  	
  	<!-- mysql INSERT or UPDATE SQL -->
  	<insert id="insert">
@@ -40,7 +43,9 @@
  			role = #{role}
  	
  	</insert>
+ 	
  	<update id="update"></update>
+ 	
  	<delete id="delete"></delete>
  	
  	<select id="create_user_table">

@@ -22,7 +22,7 @@
 			<p>인증키 오류
 		</c:if>
 
-		<form:input path="username" placeholder="USER NAME" placeholder="아이디"/>
+		<form:input path="username" placeholder="아이디"/>
 		<br />
 		<form:input path="password" type="password" placeholder="비밀번호"/>
 		<br />

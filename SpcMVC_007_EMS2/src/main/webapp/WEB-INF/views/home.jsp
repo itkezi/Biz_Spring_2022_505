@@ -29,7 +29,7 @@ span {
 </head>
 <body>
 <section class="main">
-	<form:form modelAttribute="emsVO"> 
+	<form:form modelAttribute="emsVO" encTypr="multipart/form-data"> 
 		
 		<form:errors path="e_from_name"/>
 		<form:input path="e_from_name" placeholder="발신인 이름"/><br/>
@@ -44,6 +44,9 @@ span {
 		<form:input path="e_subject"  placeholder="제목"/><br/>
 		
 		<form:input path="e_content" placeholder="내용"/>
+		
+		<input type="file" name="file">
+		
 		<button>보내기</button>
 	</form:form>
 	</section>

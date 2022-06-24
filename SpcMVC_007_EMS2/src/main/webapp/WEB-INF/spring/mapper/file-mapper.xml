@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.callor.ems.persistance.EmsDao">
+
+	<select id="selectAll">
+		SELECT * FROM tbl_files
+	</select>
+	<select id="findById"></select>
+	<insert id="insert" parameterType="FileVO">
+		INSERT INTO tbl_files(
+		f_seq,
+		f_bseq,
+		f_originalname,
+		f_filename
+		) VALUES (
+		#{f_seq},
+		#{f_bseq},
+		#{f_originalname},
+		#{f_filename}
+		)
+	</insert>
+	<insert id="insertFiles" parameterType="FileVO">
+		
+	
+	
+	</insert>
+
+
+	<update id="update"></update>
+	<delete id="delete"></delete>
+
+	<select id="create_file_table">
+		CREATE TABLE IF NOT EXISTS tbl_files (
+		f_seq BIGINT PRIMARY KEY AUTO_INCREMENT,
+		f_bseq BIGINT NOT NULL,
+		f_originalname VARCHAR(1000) NOT NULL,
+		f_filename VARCHAR(1000) NOT NULL
+		)
+	</select>
+
+</mapper> 

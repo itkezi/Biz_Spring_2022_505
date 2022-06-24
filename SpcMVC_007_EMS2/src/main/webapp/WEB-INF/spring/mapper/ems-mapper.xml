@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
- <mapper namespace="com.callor.ems.persistance.EmsDao">
+ <mapper namespace="com.callor.ems.persistance.FileDao">
  
  	<select id="selectAll"></select>
  	<select id="findById"></select>
@@ -11,7 +11,7 @@
  	<update id="update"></update>
  	<delete id="delete"></delete>
  	
- 	<select id="create_ems_table">
+ 	<select id="create_file_table">
  		CREATE TABLE IF NOT EXISTS tbl_ems (
 		 	e_seq BIGINT PRIMARY KEY AUTO_INCREMENT,
 			e_from_email VARCHAR(125) NOT NULL,

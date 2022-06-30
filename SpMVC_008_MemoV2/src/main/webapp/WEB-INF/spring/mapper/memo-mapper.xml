@@ -60,7 +60,7 @@
  			m_author VARCHAR(25) NOT NULL,
  			m_date VARCHAR(10) NOT NULL,
  			m_time VARCHAR(10) NOT NULL,
- 			m_memo VARCHAR(40) NOT NULL,
+ 			m_memo VARCHAR(4000) NOT NULL,
  			m_image VARCHAR(125),
  			m_up_image VARCHAR(125)
  		)

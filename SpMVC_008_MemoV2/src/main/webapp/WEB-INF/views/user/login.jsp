@@ -8,44 +8,19 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="${rootPath}/static/main.css">
 <title>User / login</title>
-<style>
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
 
-html {
-	width: 100vw;
-	height: 100vh;
-}
-
-body {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-form {
-	width: 50%;
-	text-align: center;
-}
-
-input {
-	padding :1rem;
-	width: 100%;
-}
-</style>
 </head>
 <body>
-	<form method="POST">
-		<input name="username" placeholder="USERNAME 입력 후 Enter">
-
-	</form>
-
-
+	<div class="login-box">
+		<h1>myMEMO</h1>
+		<span>SELECT * FROM kezi_memo</span> <br> <span>WHERE ID =
+			&#35;&#123;</span>
+		<form method="POST">
+			<input name="username">
+		</form>
+		<span>&#125;</span>
+	</div>
 </body>
 </html>

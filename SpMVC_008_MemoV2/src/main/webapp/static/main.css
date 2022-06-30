@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'DungGeunMo';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+
+body {
+	font-family: 'DungGeunMo';
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	color: lime;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table th, table td {
+	font-size: 20px; border : 3px solid lime;
+	padding: 20px;
+	border: 3px solid lime;
+}
+
+table td {
+	cursor: pointer;
+}
+
+
+.table {
+	margin-bottom: 50px;
+	border: 3px solid lime;
+	height: 444px;
+	overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: lime; /* 스크롤바의 색상 */
+}
+
+::-webkit-scrollbar-track {
+	background-color: black
+}
+
+.t-time {
+	min-width: 195px;
+}
+
+.t-memo {
+	width: 500px;
+}
+
+.memo td:hover, .home-box a:hover {
+	background-color: lime;
+	color: black;
+}
+
+.home-body {
+	flex-direction: column;
+}
+
+.home-box {
+	text-align: center;
+}
+
+.home-box h2 {
+	font-size: 40px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.home-box a {
+	font-size: 30px;
+	font-weight: 500;
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	padding: 20px;
+	border: 3px solid lime;
+	color: inherit;
+}
+
+.a-box {
+	text-align: center;
+}
+
+.login-box {
+	margin-bottom: 100px;
+}
+
+.login-box h1 {
+	margin: 20px auto;;
+	font-size: 60px;
+	font-weight: 500;
+}
+
+.login-box span {
+	font-size: 40px;
+	font-weight: 500;
+	display: inline-block;
+	margin: 10px 0;
+}
+
+.login-box form {
+	display: inline-block;
+}
+
+.login-box input {
+	font-family: 'DungGeunMo';
+	width: 230px;
+	font-size: 20px;
+	font-weight: 500;
+	background-color: transparent;
+	padding: 20px;
+	border: 3px solid lime;
+	color: lime;
+	font-family: 'DungGeunMo';
+}

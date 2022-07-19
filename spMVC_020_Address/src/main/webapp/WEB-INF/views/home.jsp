@@ -9,46 +9,62 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="${rootPath}/static/css/w3css.css">
-<style>
-.w3-container {
-	width: 60%;
-	margin: 30px auto !important;
-}
-</style>
+<link rel="stylesheet" href="${rootPath}/static/css/hjcss.css">
+
 <title>Insert title here</title>
 </head>
 <body>
-
-	<form method="POST" class="w3-container w3-card-2">
-		<h2 class="w3-center w3-text-indigo w3-section">새로운 정보</h2>
-		<input type="hidden" value='<c:out value= "${ADDR.a_seq}" default="0"/>'/>
-		<input name="a_name" class="w3-input  w3-border w3-section" placeholder="이름" value="${ADDR.a_name}"> 
-		<input name="a_tel" class="w3-input w3-border w3-section" placeholder="전화번호" value="${ADDR.a_tel}"> 
-		<input name="a_address" class="w3-input w3-border w3-section" placeholder="주소"  value="${ADDR.a_address}">
-		<button class="w3-button w3-block w3-section w3-indigo w3-ripple w3-padding">저장하기</button>
+	<c:choose>
+		<c:when test="${ADDR.a_seq > 0 }">
+			<h1 class="w3-text-white w3-center">UPDATE</h1>
+		</c:when>
+		<c:otherwise>
+			<h1 class="w3-text-white w3-center">NEW</h1>
+		</c:otherwise>
+	</c:choose>
+	<video class="hj-v" autoplay muted loop>
+		<source src="${rootPath}/static/image/00.mp4" type="video/mp4">
+	</video>
+	<form method="POST" class="box w3-card-4">
+		<input name="a_seq" type="hidden" value='<c:out value="${ADDR.a_seq}" default="0"/>'/>
+		<input name="a_name" class="hj-in  w3-border" placeholder="Name" value="${ADDR.a_name}"> 
+		<input name="a_tel" class="hj-in w3-border" placeholder="Tel" value="${ADDR.a_tel}"> 
+		<input name="a_address" class="hj-in w3-border" placeholder="Addr"  value="${ADDR.a_address}">
+		<button class="w3-button hj-c-main">저장</button>
 	</form>
-
-	<table class="w3-container w3-table w3-bordered  w3-centered w3-card-2">
-		<thead>
-			<tr class="">
-				<th>SEQ</th>
-				<th>이름</th>
-				<th>전화번호</th>
-				<th>주소</th>
-				<th>상세</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${ADDR}" var="addr">
-				<tr>
-					<td>${addr.a_seq}</td>
-					<td>${addr.a_name}</td>
-					<td>${addr.a_tel}</td>
-					<td>${addr.a_address}</td>
-					<td><a class="w3-button w3-indigo" href="${rootPath}/detail?seq=${addr.a_seq}">+</a></td>
+	<c:if test="${empty ADDR}">
+		<table class="box hj-ta w3-table w3-bordered  w3-centered w3-card-4">
+			<thead>
+				<tr class="">
+					<th>No.</th>
+					<th>Name</th>
+					<th>Tel</th>
+					<th>Addr</th>
+					<th>Detail</th>
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<c:forEach items="${ADDRS}" var="addr" varStatus="index">
+					<tr>
+						<td>${index.count}</td>
+						<td>${addr.a_name}</td>
+						<td>${addr.a_tel}</td>
+						<td>${addr.a_address}</td>
+						<td><a class="hj-pl w3-button hj-c-main" href="${rootPath}/detail?seq=${addr.a_seq}">+</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5">
+						<%@ include file="/WEB-INF/views/pagenation.jsp"  %>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</c:if>
+	<footer>
+	<h6 class="w3-text-white w3-center">CopyRight</h6>
+	</footer>
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.callor.address.persistance;
 import java.util.List;
 
 import com.callor.address.model.AddressVO;
+import com.callor.address.model.SearchPage;
 
 public interface AddressDao {
 	
@@ -11,6 +12,8 @@ public interface AddressDao {
 	public List<AddressVO> selectAll();
 
 	public AddressVO findById(Long a_seq);
+	
+	public List<AddressVO> searchAndPage(SearchPage searchPage);
 
 	public int insert(AddressVO vo);
 	public int update(AddressVO vo);

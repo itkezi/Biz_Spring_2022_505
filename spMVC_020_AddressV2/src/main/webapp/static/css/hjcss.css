@@ -1,0 +1,210 @@
+/* 전체 레이아웃 */
+* {
+	margin : 0;
+}
+
+html {
+	position:relative;
+	width:100vw;
+	height:100vh;
+}
+
+body {
+	position:relative;
+	display: flex;
+	flex-direction:column;
+	width: 100%;
+	height:100%;
+}
+
+a {
+	text-decoration: none
+}
+
+.box {
+	background-color:white;
+	width: 30%;
+	padding : 16px;
+	min-width:500px;
+	margin: 30px auto !important;
+}
+
+.hj-v {
+            position: fixed; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto; z-index: -100;
+            background-size: cover;
+}
+
+.hj-c-main {
+	color:#fff!important;
+	background-color:#24245c!important;
+}
+
+.hj-c-main-text {
+	color:#24245c!important;
+}
+
+footer {
+	width: 30px;
+	margin : 0 auto !important;
+}
+
+h1 {
+font-weight: 800;
+margin-bottom: 15px;
+}
+
+/* home.jsp*/
+
+header {
+	color:white;
+	text-align: center;
+}
+
+header h1 {
+	text-shadow: 1px 1px 1px black;
+	font-weight: 900;
+	margin : 20px 0 0 !important;
+	
+}
+
+nav ul {
+	display:flex;
+	justify-content:space-around;
+	list-style: none;
+	background-color: black;
+	color:white;
+}
+
+nav li {
+	padding : 12px 16px;
+	margin : 0.5rem;
+}
+
+
+/* list.jsp */
+
+.box-main {
+	background-color:white;
+	width: 60%;
+	padding : 25px;
+	min-width:850px;
+	margin: 30px auto !important;
+}
+
+
+.hj-ta-f td{
+	padding : 0 0 15px !important;
+}
+
+.hj-ta tbody:hover {
+	cursor: pointer;
+}
+
+.hj-pl {
+	padding : 4px 10px;
+}
+
+/* insert.jsp */
+
+.hj-in {
+margin : 20px 0;
+}
+
+
+/* detail.jsp */
+
+.de-a {
+margin : 35px 20px 5px;
+}
+
+/* pagenation.jsp */
+
+.page-box {
+	margin: 15px 0 auto !important;
+}
+
+.page-body {
+	padding : 0;
+	list-style : none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page-link {
+	font-weight: 500;
+	padding : 0.7rem;
+	line-height : 1.25;
+	color : #24245c;
+}
+
+.page-link:hover {
+	color:#0056B3;
+
+}
+
+.page-link:focus {
+	z-index:3;
+	outline:0;
+}
+
+.page-item.active .page-link {
+	color : #fff;
+	background-color: #24245c;
+	border : ;
+}
+
+/* about.jsp*/
+
+ .loading span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    animation: loading 1s 0s linear infinite;
+
+  }
+
+  .loading span:nth-child(1) {
+    animation-delay: 0s;
+    background-color: red;
+  }
+
+  .loading span:nth-child(2) {
+    animation-delay: 0.2s;
+    background-color: orange;
+  }
+
+  .loading span:nth-child(3) {
+    animation-delay: 0.4s;
+    background-color: yellowgreen;
+  }
+
+ @keyframes loading {
+    0%,                 
+    100% {
+      opacity: 0;        
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;      
+      transform: scale(1.2);
+    }
+  }
+  
+/* footer.jsp */
+
+footer {
+	position:absolute;
+	bottom:0;
+	width: 100%;
+	color : white;
+	text-align: center
+}
+address {
+	margin : 5px;
+}
+

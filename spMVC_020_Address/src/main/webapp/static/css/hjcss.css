@@ -20,7 +20,7 @@ body {
 	background-color:white;
 	width: 60%;
 	padding : 16px;
-	min-width:800px;
+	min-width:850px;
 /* 	max-width:900px; */
 	margin: 30px auto !important;
 }
@@ -50,8 +50,66 @@ margin : 20px 0;
 	padding : 4px 10px;
 }
 
+.box-f {
+	display: flex;
+	justify-content: space-between;	
+}
+
+.box-f input {
+	margin : 0 10px;
+}
+
+.box-f .ad {
+	width:100%;
+}
+
+.box-f button {
+	width:200px;
+}
+
 /* detail.jsp */
 
 .de-a {
 margin : 35px 20px 5px;
+}
+
+/* pagenation.jsp */
+
+.page-box {
+	margin: 30px auto !important;
+}
+
+.page-body {
+	list-style : none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.page-link {
+	padding : 0.5rem 0.7rem;
+	line-height : 1.25;
+	color : #007bff;
+	background-color: #fff;
+	border : 1px solid #DEE2E6;
+	text-decoration: none;
+}
+
+.page-link:hover {
+	color:#0056B3;
+	background-color: #E9ECF;
+	border-color: #DEE2EF;
+
+}
+
+.page-link:focus {
+	z-index:3;
+	outline:0;
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.page-item.active .page-link {
+	color : #fff;
+	background-color: #007BFF;
+	border : ;
 }

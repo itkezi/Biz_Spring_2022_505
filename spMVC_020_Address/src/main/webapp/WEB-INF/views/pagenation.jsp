@@ -4,44 +4,7 @@
 <c:set var="rootPath" value="${pageContext.request.contextPath}" />
 
 <style>
-.page-box {
-	margin: 30px auto !important;
-}
 
-.page-body {
-	list-style : none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.page-link {
-	padding : 0.5rem 0.7rem;
-	line-height : 1.25;
-	color : #007bff;
-	background-color: #fff;
-	border : 1px solid #DEE2E6;
-	text-decoration: none;
-}
-
-.page-link:hover {
-	color:#0056B3;
-	background-color: #E9ECF;
-	border-color: #DEE2EF;
-
-}
-
-.page-link:focus {
-	z-index:3;
-	outline:0;
-	box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
-}
-
-.page-item.active .page-link {
-	color : #fff;
-	background-color: #007BFF;
-	border : ;
-}
 
 </style>
 

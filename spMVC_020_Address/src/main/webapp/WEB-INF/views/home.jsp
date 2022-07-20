@@ -25,12 +25,15 @@
 	<video class="hj-v" autoplay muted loop>
 		<source src="${rootPath}/static/image/00.mp4" type="video/mp4">
 	</video>
-	<form method="POST" class="box w3-card-4">
+	<form method="POST" class="box <c:if test='${empty ADDR}'>box-f </c:if>w3-card-4">
 		<input name="a_seq" type="hidden" value='<c:out value="${ADDR.a_seq}" default="0"/>'/>
-		<input name="a_name" class="hj-in  w3-border" placeholder="Name" value="${ADDR.a_name}"> 
-		<input name="a_tel" class="hj-in w3-border" placeholder="Tel" value="${ADDR.a_tel}"> 
-		<input name="a_address" class="hj-in w3-border" placeholder="Addr"  value="${ADDR.a_address}">
-		<button class="w3-button hj-c-main">저장</button>
+		<input name="a_name" class="hj-in  w3-border <c:if test='${ADDR.a_seq > 0 }'>w3-input</c:if>" 
+			placeholder="Name" value="${ADDR.a_name}"> 
+		<input name="a_tel" class="hj-in w3-border <c:if test='${ADDR.a_seq > 0 }'>w3-input</c:if>" 
+			placeholder="Tel" value="${ADDR.a_tel}"> 
+		<input name="a_address" class="ad hj-in w3-border <c:if test='${ADDR.a_seq > 0 }'>w3-input</c:if>" 
+			placeholder="Addr"  value="${ADDR.a_address}">
+		<button class="w3-button hj-c-main <c:if test='${ADDR.a_seq > 0 }'>w3-block</c:if>">저장</button>
 	</form>
 	<c:if test="${empty ADDR}">
 		<table class="box hj-ta w3-table w3-bordered  w3-centered w3-card-4">
@@ -46,7 +49,7 @@
 			<tbody>
 				<c:forEach items="${ADDRS}" var="addr" varStatus="index">
 					<tr>
-						<td>${index.count}</td>
+						<td>${addr.a_seq}</td>
 						<td>${addr.a_name}</td>
 						<td>${addr.a_tel}</td>
 						<td>${addr.a_address}</td>
@@ -63,8 +66,8 @@
 			</tfoot>
 		</table>
 	</c:if>
-	<footer>
-	<h6 class="w3-text-white w3-center">CopyRight</h6>
-	</footer>
 </body>
+<footer>
+	<h6 class="w3-text-white w3-center">CopyRight</h6>
+</footer>
 </html>

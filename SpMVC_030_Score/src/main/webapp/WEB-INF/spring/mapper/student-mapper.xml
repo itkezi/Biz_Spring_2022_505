@@ -7,22 +7,40 @@
  
  	<select id="selectAll" resultType="StudentVO">
  		SELECT * FROM tbl_student
+ 	</select>
  	
+ 	<!-- 
+ 	id : PK 칼럼 
+ 	property : vo 클래스의 변수 이름 
+ 	column : table의 칼럼 이름	
+ 	-->
+ 	<resultMap type="StudentVO" id="findByIdAndScore">
+ 		<id property="st_num" column="st_num"/>
+ 		<collection property="scoreList"  column="st_num" ofType="ScoreVO" select="findByIdScore">
+ 		</collection>
+ 	</resultMap>
+ 	
+ 	<select id="findById" resultMap="findByIdAndScore">
+ 		SELECT * FROM tbl_student WHERE st_num = #{st_num}
  	</select>
- 	<select id="findById" resultType="StudentVO">
- 		SELECT * FROM tbl_student
- 		WHERE st_num = #{st_num}
+ 	
+ 	<select id="findByIdScore" resultType="ScoreVO">
+ 		SELECT * FROM tbl_score
+ 			LEFT JOIN tbl_subject
+ 				ON sc_sbcode = sb_code
+ 		WHERE sc_stnum = #{sc_stnum}
  	</select>
+ 	
  	<insert id="insert" parameterType="StudentVO">
  		INSERT INTO tbl_student (
-	 		st_num,
+ 			st_num,
 			st_name,
 			st_dept,
 			st_grade,
 			st_tel,
 			st_addr
  		) VALUES (
-	 		#{st_num},
+ 			#{st_num},
 			#{st_name},
 			#{st_dept},
 			#{st_grade},
@@ -30,18 +48,19 @@
 			#{st_addr}
  		)
  	</insert>
- 	<update id="update">
- 		UPDATE tbl_student 
+ 	<update id="update" parameterType="StudentVO">
+ 		UPDATE tbl_student
  		SET st_name = #{st_name},
 			st_dept = #{st_dept},
 			st_grade = #{st_grade},
 			st_tel = #{st_tel},
 			st_addr = #{st_addr}
-		WHERE st_num = #{st_num}
-			 
+		WHERE st_num =#{st_num}
+ 	
  	</update>
  	<delete id="delete">
- 		DELETE FROM tbl_student WHERE st_num = #{st_num}
+ 		DELETE FROM tbl_student 
+ 		WHERE st_num = #{st_num}
  	</delete>
  
  </mapper> 

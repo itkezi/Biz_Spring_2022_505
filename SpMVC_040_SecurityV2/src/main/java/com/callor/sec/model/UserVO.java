@@ -1,5 +1,7 @@
 package com.callor.sec.model;
 
+import java.util.Collection;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -20,16 +22,24 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Builder
-public class userVO implements UserDetails{
+public class UserVO implements UserDetails{
 
+	private static final long serialVersionUID = 1L;
+	
 	private String username;
 	private String password;
-	private boolean isAccountNonExpired;
-	private boolean isAccountNonLocked;
-	private boolean isCredentailsNonExpired;
+	private boolean enabled;
+	private boolean accountNonExpired;
+	private boolean accountNonLocked;
+	private boolean credentialsNonExpired;
 	
-	private Collection<? extends GrantedAuthority> authorites;
+	private Collection<? extends GrantedAuthority> authorities;
 	
+	private String email;
+	private String tel;
+	private String realname;
+	private String nickname;
+
 	
 
 }

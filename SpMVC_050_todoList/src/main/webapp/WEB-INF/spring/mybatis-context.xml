@@ -52,7 +52,7 @@
 	</bean>
 
 	
-	<!-- mybatis-scn -->
+	<!-- mybatis-scan -->
 	<mybatis-spring:scan base-package="com.callor.todo.persistance"/>
 
 </beans>

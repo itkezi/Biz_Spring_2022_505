@@ -26,8 +26,20 @@
 		<sec:intercept-url pattern="/admin/**" access="isAuthenticated() AND hasRole('ROLE_ADMIN')" />
 		<sec:intercept-url pattern="/todo/insert" access="isAuthenticated()" />
 
-		<sec:form-login />
-		<sec:logout />
+		<!-- login-processing-url : POST 방식 요청 처리 -->
+		<sec:form-login login-page="/user/login?error=LOGIN_NEED"
+						login-processing-url="/user/login" 
+						username-parameter="username" 
+						password-parameter="password" />
+						
+		<!-- invalidate-session : 로그아웃하면 session 제거 -->
+		<!-- delete-cookies : 쿠키삭제 -->
+		<!-- logout-success-url : 로그아웃하면 보여줄 페이지 -->
+		<sec:logout logout-url="/logout" 
+					invalidate-session="true"
+					delete-cookies="JSESSIONID"
+					logout-success-url="/user/login"/>
+					
 	</sec:http>
 
 	<sec:authentication-manager>

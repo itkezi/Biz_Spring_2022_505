@@ -1,9 +1,5 @@
 package com.callor.todo.controller;
 
-import java.security.Principal;
-import java.util.List;
-
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +15,10 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController {
 	
 
-	
+	// localhost:8080/context/user/login
 	@RequestMapping(value={"/login"}, method=RequestMethod.GET)
-	public String login() {
+	public String login(String error,Model model) {
+		model.addAttribute("error", error);
 		return null;
 	}
 	

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.callor</groupId>
 	<artifactId>todo</artifactId>
-	<name>SpMVC_050_todoListV2</name>
+	<name>SpMVC_050_todoList</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<dependencyManagement>
@@ -50,6 +50,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 		</dependency>
+
 		<!-- spring security web -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
 		<dependency>
@@ -70,11 +71,14 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 		</dependency>
+
 
 		<!-- AspectJ -->
 		<dependency>
@@ -131,6 +135,10 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.30</version>
 		</dependency>
+
+
+
+
 
 
 		<!-- Servlet -->

@@ -12,34 +12,30 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-/*
- * Security 에서 제공하는 사용자 정보를 담을 VO를 생성한다
- * 여기서 UserDetails 인터페이스를 상속받아 사용한다
- */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @Builder
-public class UserVO implements UserDetails{
+public class UserVO implements UserDetails { // extends User {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private String username;
 	private String password;
 	private boolean enabled;
 	private boolean accountNonExpired;
 	private boolean accountNonLocked;
 	private boolean credentialsNonExpired;
-	
-	private Collection<? extends GrantedAuthority> authorities;
-	
+	private Collection<? extends GrantedAuthority> authorities; // getAuthorities
+
 	private String email;
-	private String tel;
+	private String phone;
+	private String address;
+	
 	private String realname;
 	private String nickname;
 
-	
 
 }

@@ -18,7 +18,7 @@
 	<H1>나의 Todo List</H1>
 
 	<sec:authorize access="isAnonymous()">
-		<a href="${rootPath}/login">로그인</a>
+		<a href="${rootPath}/user/login">로그인</a>
 		<a href="${rootPath}/user/join">회원가입</a>
 	</sec:authorize>
 

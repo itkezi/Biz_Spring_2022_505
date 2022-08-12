@@ -1,4 +1,4 @@
-package com.itkezi.letterbunker;
+package com.itkezi.letterbunker.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

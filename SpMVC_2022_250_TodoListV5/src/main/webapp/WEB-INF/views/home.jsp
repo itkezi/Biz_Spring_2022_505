@@ -25,6 +25,7 @@
 	html {
 		width: 100vw;
 		height: 100vh;
+		background-color: #e6b925;
 	}
 	
 	body {
@@ -37,14 +38,14 @@
 	header {
 		padding:2rem;
 		color:white;
-		background-color: green;
+		background-color: #de0d0d;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 	
 	nav {
-		background-color: blue;
+		background-color: #1837d6;
 		color:white;
 	}
 	
@@ -96,6 +97,21 @@
 		align-items: center;
 	}
 
+	.outbtn {
+		text-decoration: none;
+		color:inherit;
+		magin:5px 0;
+		padding:0 12px;
+		border: none;
+		border-bottom:3px solid transparent;
+		transition : 1s;
+		cursor: pointer;
+		background-color: transparent;
+	}
+	
+		.outbtn:hover {
+		border-bottom:3px solid #ddd
+	}
 </style>
 </head>
 <body>
@@ -114,7 +130,11 @@
 		</sec:authorize>
 		
 		<sec:authorize access="isAuthenticated()">		
-			<li><a href="${rootPath}/">로그아웃</a></li>
+			<li>
+				<form:form class="logout" action="${rootPath}/logout">
+				<button class="outbtn">로그아웃</button>
+				</form:form>
+			</li>
 			<li><a href="${rootPath}/user/mypage">myPage</a></li>
 		</sec:authorize>
 	</ul>

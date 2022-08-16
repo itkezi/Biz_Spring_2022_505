@@ -1,4 +1,5 @@
-package com.callor.todo.service.impl;
+package com.itkezi.letterbunker.service.impl;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,27 +9,19 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.callor.todo.model.AuthorityVO;
-import com.callor.todo.model.UserVO;
-import com.callor.todo.persistance.UserDao;
-import com.callor.todo.service.UserService;
+import com.itkezi.letterbunker.model.AuthorityVO;
+import com.itkezi.letterbunker.model.UserVO;
+import com.itkezi.letterbunker.persistance.UserDao;
+import com.itkezi.letterbunker.service.UserService;
 
 @Service("userServiceV1")
-public class UserServiceImplV1 implements UserService{
+public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserDao userDao;
 	
 	@Autowired
 	private PasswordEncoder passEncoder;
-	
-	// 자동실행 하기 (꼼수)
-	// BeanService 클래스로 이동
-	//	@Bean
-	//	public void create_table() {
-	//		userDao.create_user_table();
-	//		userDao.create_auth_table();
-	//	}
 	
 	@Override
 	public void create_user_table() {
@@ -55,14 +48,6 @@ public class UserServiceImplV1 implements UserService{
 		return null;
 	}
 
-	/*
-	 * 회원가입 하기
-	 * 1. 최초로 회원 가입 되는 username  은 ADMIN, USER 권한을 부여한다
-	 * 2. 이후에 가입된 회원에게는 USER 권한을 부여한다
-	 * 3. 최초로 회원 가입된 user의  enabled 칼럼을 true 로
-	 * 4. 이후에 가입된 회원의 enabled 칼럼은 false 로 하여 
-	 * 		이후 인증 후 사용가능 하도록 하는 기능을 추가 할수 있도록 한다
-	 */
 	@Transactional
 	@Override
 	public int insert(UserVO vo) {
@@ -92,12 +77,6 @@ public class UserServiceImplV1 implements UserService{
 			vo.setEnabled(false);
 		}
 		
-		// 회원정보의 비밀번호를 암호화 하기
-		/*
-		 * vo 에 담긴 평문 비번을 get 하여
-		 * passEncoder 의 encode() method 를 사용하여 암호화하고
-		 * 다시 vo 의 password 에 setting
-		 */
 		String encPassword = passEncoder.encode(vo.getPassword());
 		vo.setPassword(encPassword);
 		
@@ -109,19 +88,16 @@ public class UserServiceImplV1 implements UserService{
 
 	@Override
 	public int update(UserVO vo) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int delete(String id) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int role_insert(List<AuthorityVO> auths) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

@@ -13,13 +13,13 @@
 
 <title>나의 API App</title>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="${rootPath}/static/css/main.css?ver=2022-06-02-001">
 <link rel="stylesheet"
 	href="${rootPath}/static/css/home.css?ver=2022-06-09-001">
 <link rel="stylesheet"
 	href="${rootPath}/static/css/table.css?ver=2022-06-02-001">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 .ma {
 margin-left : auto;

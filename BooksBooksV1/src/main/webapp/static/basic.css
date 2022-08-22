@@ -1,0 +1,214 @@
+header {
+  padding: 1.2rem;
+  text-align: center;
+  background-color: rgb(193, 226, 237);
+  color: rgb(47, 41, 41);
+  font-weight: 900;
+}
+nav {
+  background-color: skyblue;
+  color: #fff;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav li {
+  padding: 3px 16px;
+  margin: 15px;
+  border-bottom: 5px solid transparent;
+  font-weight: 900;
+  font-size: 20px;
+
+  transition: border 0.7s ease-out;
+}
+
+nav li:hover {
+  cursor: pointer;
+  border-bottom: 5px solid rgb(241, 241, 114);
+}
+
+/*
+	nav 등에 a tag 를 사용할 때
+	보통 일반적인 tag 는 부모 tag 에 설정된 style 을 상속받아
+	자연스럽게 구성이 된다.
+	하지만 a tag는 font, color, text-style 등을 부모 tag 로부터 상속받지 않는다.
+	항상 스스로의 모습만 고집하는 tag 이다.
+	a tag 에서는 text-decoration 과 font 의 color 등을 자체적으로 설정해야 한다.
+*/
+
+a {
+  text-decoration: none;
+}
+nav a {
+  color: inherit;
+  white-space: nowrap;
+}
+
+
+form {
+	width: 60vw;
+	margin: 30px auto;
+}
+
+form div {
+	display: flex;
+	justify-content: space-between;
+}
+
+form input {
+	flex: 1;
+}
+
+input, textarea, button {
+	letter-spacing: -0.2px;
+	font-size: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+section.main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+}
+
+footer.main {
+  background-color: skyblue;
+}
+
+.ch-container {
+	position: relative;
+	padding: 0.1rem 16px;
+}
+
+.modal {
+	position: absolute;
+	display: none;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color: rgba(0,0,0,0.4);
+	
+	justify-content: center;
+	align-items: center;
+}
+
+.ch-button {
+	
+}
+
+.ch-display-top-right{
+	position: absolute;
+	right: 0;
+	top: 0;	
+}
+
+.ch-teal {
+	color : #fff !important;
+	background-color: #009688 !important;
+}
+
+.modal .modal-content {
+	margin:auto;
+	background-color: #fff;
+	position: relative;
+	padding :0;
+	outline: 0;
+	width : 800px;
+}
+
+.modal-content h2 {
+	padding :12px;
+	text-align: center;
+
+}
+
+.modal-content table {
+	margin : 10px auto;
+	
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing : 0;
+	display : table;
+	border:1px solid #eee;
+	width: 100%;
+}
+table.list2 {
+	border-collapse: collapse;
+	border-spacing : 0;
+	display : table;
+	border:1px solid #eee;
+	margin : 150px;
+	text-align: center;
+}
+table.detail {
+	border-collapse: collapse;
+	border-spacing : 0;
+	display : table;
+	border:1px solid #eee;
+	width: 1030px;
+	margin : 150px auto;
+	text-align: right;
+}
+table.detail td {
+	padding : 5px;
+	background-color: #ccc;
+	border: 1px solid #666;
+}
+
+tr {
+	border-bottom: 1px solid #eee;
+}
+
+tbody tr:nth-of-type(even) {
+	background-color: #f1f1f1;	
+}
+tbody tr:nth-of-type(odd) {
+	background-color: #fff;	
+}
+tbody tr:hover {
+	cursor: pointer;
+	background-color: #ccc;
+}
+
+/*
+	table td 에 보여지는 문자열을 말줄임표(...) 으로 표현하기
+*/
+table {
+	table-layout: fixed;
+}
+table td {
+	width: 300px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.add {
+	margin-left: auto;
+	border: 1px solid #ccc;
+	background-color: #ccc;
+	color: white;
+	padding: 16px 12px;
+}

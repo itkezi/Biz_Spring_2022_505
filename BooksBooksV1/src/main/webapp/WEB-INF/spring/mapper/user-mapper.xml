@@ -45,22 +45,22 @@
  	
  	<select id="create_user_table">
  		CREATE TABLE IF NOT EXISTS tbl_users (
-			username VARCHAR(20) PRIMARY KEY,
-			password VARCHAR(255) NOT NULL,
-			enabled BOOLEAN DEFAULT FALSE,
-			accountNonExpired BOOLEAN  DEFAULT FALSE,
-			accountNonLocked BOOLEAN  DEFAULT FALSE,
-			credentialsNonExpired BOOLEAN  DEFAULT FALSE,
-			realname VARCHAR(20),
-			nickname VARCHAR(20)
+			username 				VARCHAR(20) PRIMARY KEY,
+			password 				VARCHAR(255) NOT NULL,
+			enabled 				BOOLEAN DEFAULT FALSE,
+			accountNonExpired 		BOOLEAN  DEFAULT FALSE,
+			accountNonLocked	 	BOOLEAN  DEFAULT FALSE,
+			credentialsNonExpired 	BOOLEAN  DEFAULT FALSE,
+			realname 				VARCHAR(20),
+			nickname 				VARCHAR(20)
 		)
  	</select>
  	
  	<select id="create_auth_table">
 	 	CREATE TABLE IF NOT EXISTS tbl_authorities (
-			seq BIGINT AUTO_INCREMENT PRIMARY KEY,
-		    username VARCHAR(20),
-		    authority VARCHAR(20)
+			seq 		BIGINT AUTO_INCREMENT PRIMARY KEY,
+		    username 	VARCHAR(20),
+		    authority	VARCHAR(20)
 		)
  	</select>
  	

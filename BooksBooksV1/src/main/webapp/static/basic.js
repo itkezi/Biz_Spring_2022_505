@@ -12,13 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const input_index = {
     isbn: 0,
-    title: 1,
-    author: 2,
-    publisher: 3,
-    pubdate: 4,
-    price: 5,
+    image: 1,
+    title: 2,
+    author: 3,
+    publisher: 4,
+    description: 5,
     link: 6,
-    image: 7,
   };
 
   // 정규식 문법
@@ -71,11 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
           inputs[input_index.title].value = result.title;
           inputs[input_index.author].value = result.author;
           inputs[input_index.publisher].value = result.publisher;
-          inputs[input_index.pubdate].value = result.pubdate;
-          inputs[input_index.price].value = result.price;
+          // inputs[input_index.price].value = result.price;
           inputs[input_index.link].value = result.link;
           inputs[input_index.image].value = result.image;
-          desc.value = result.description.replace(extractTextPattern, "");
+          inputs[input_index.description].value = result.description.replace(
+            extractTextPattern,
+            ""
+          );
+          // desc.value = result.description.replace(extractTextPattern, "");
           modal_box.style.display = "none";
         });
       //   } else {

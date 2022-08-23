@@ -6,6 +6,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.itkezi.booksbooks.persistance.BookDao;
 import com.itkezi.booksbooks.persistance.UserDao;
 
 /*
@@ -17,11 +18,16 @@ public class BeanService {
 	@Autowired
 	private UserDao userDao;
 	
+	@Autowired
+	private BookDao bookDao;
+	
 	// 자동실행 하기 (꼼수)
 	@Bean
 	public void create_table() {
 		userDao.create_user_table();
 		userDao.create_auth_table();
+		bookDao.create_book_table();
+		
 	}
 	
 	@Bean

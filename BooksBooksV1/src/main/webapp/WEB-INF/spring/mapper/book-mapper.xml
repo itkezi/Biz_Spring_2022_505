@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.itkezi.booksbooks.persistance.BookDao">
+ 
+  	<select id="selectAll" resultType="BookVO">
+  		SELECT * FROM tbl_books;
+  	</select>
+ 	<select id="findByUsername" resultType="BookVO">
+ 		SELECT * FROM tbl_books WHERE username=#{username}
+ 	</select>
+ 	<select id="findById" resultType="BookVO">
+ 		SELECT * FROM tbl_books WHERE seq=#{seq}
+ 	</select>
+ 	<insert id="insert" parameterType="BookVO">
+ 		INSERT INTO tbl_books (
+ 			b_username,
+ 			b_image,
+ 			b_title,
+ 			b_author,
+			b_publisher,
+			b_description,
+			b_link,
+			b_letter,
+			b_price,
+ 			b_page,
+ 			b_comp
+ 		) VALUES (
+ 			#{b_username},
+ 			#{b_image},
+ 			#{b_title},
+ 			#{b_author},
+			#{b_publisher},
+			#{b_description},
+			#{b_link},
+			#{b_letter},
+			#{b_price},
+ 			#{b_page},
+ 			#{b_comp}
+ 		)
+ 	</insert>
+ 	<update id="update" parameterType="BookVO">
+ 		UPDATE tbl_books
+ 			SET 
+				b_description = #{b_description},
+				b_letter = #{b_letter},
+				b_price = #{b_price},
+ 				b_page = #{b_page},
+ 				b_comp = #{b_comp}
+ 			WHERE seq = #{seq}
+ 	</update>
+ 	<delete id="delete">
+ 		DELETE FROM tbl_books WHERE seq = #{seq}
+ 	</delete>
+ 	
+ 	<select id="create_book_table">
+ 		CREATE TABLE IF NOT EXISTS tbl_books (
+			seq 			BIGINT AUTO_INCREMENT PRIMARY KEY,
+			b_username 		VARCHAR(20)		NOT NULL,
+			b_isbn			VARCHAR(13),
+			b_image			VARCHAR(255),
+			b_title			VARCHAR(255) 	NOT NULL,
+			b_author		VARCHAR(255) 	NOT NULL,
+			b_publisher		VARCHAR(255),
+			b_description	VARCHAR(4000),
+			b_link			VARCHAR(255),
+			b_letter		VARCHAR(4000),
+			b_price			VARCHAR(10),
+			b_page			VARCHAR(10),
+			b_comp			BOOLEAN DEFAULT FALSE
+ 		)
+ 	</select>
+ 
+ </mapper>

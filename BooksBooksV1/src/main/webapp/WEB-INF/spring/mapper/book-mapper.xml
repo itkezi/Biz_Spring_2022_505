@@ -9,7 +9,7 @@
   		SELECT * FROM tbl_books;
   	</select>
  	<select id="findByUsername" resultType="BookVO">
- 		SELECT * FROM tbl_books WHERE username=#{username}
+ 		SELECT * FROM tbl_books WHERE b_username=#{b_username}
  	</select>
  	<select id="findById" resultType="BookVO">
  		SELECT * FROM tbl_books WHERE seq=#{seq}
@@ -17,38 +17,46 @@
  	<insert id="insert" parameterType="BookVO">
  		INSERT INTO tbl_books (
  			b_username,
+ 			b_isbn,
  			b_image,
  			b_title,
  			b_author,
 			b_publisher,
 			b_description,
 			b_link,
+			b_comment,
 			b_letter,
 			b_price,
  			b_page,
- 			b_comp
+ 			b_comp,
+ 			b_color
  		) VALUES (
  			#{b_username},
+ 			#{b_isbn},
  			#{b_image},
  			#{b_title},
  			#{b_author},
 			#{b_publisher},
 			#{b_description},
 			#{b_link},
+			#{b_comment},
 			#{b_letter},
 			#{b_price},
  			#{b_page},
- 			#{b_comp}
+ 			#{b_comp},
+ 			#{b_color}
  		)
  	</insert>
  	<update id="update" parameterType="BookVO">
  		UPDATE tbl_books
  			SET 
 				b_description = #{b_description},
+				b_comment = #{b_comment},
 				b_letter = #{b_letter},
 				b_price = #{b_price},
  				b_page = #{b_page},
- 				b_comp = #{b_comp}
+ 				b_comp = #{b_comp},
+ 				b_color = #{b_color}
  			WHERE seq = #{seq}
  	</update>
  	<delete id="delete">
@@ -66,10 +74,12 @@
 			b_publisher		VARCHAR(255),
 			b_description	VARCHAR(4000),
 			b_link			VARCHAR(255),
+			b_comment		VARCHAR(4000),
 			b_letter		VARCHAR(4000),
 			b_price			VARCHAR(10),
 			b_page			VARCHAR(10),
-			b_comp			BOOLEAN DEFAULT FALSE
+			b_comp			BOOLEAN DEFAULT FALSE,
+			b_color			VARCHAR(255)
  		)
  	</select>
  

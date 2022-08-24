@@ -51,6 +51,14 @@ section {
 	<section>
 <form:form method="POST" class="w3-container">
 		<input class="" name="b_isbn" id="isbn" type="hidden" value="${BOOKS.b_isbn}">
+		
+		<select name="b_color">
+		    <option value="red">빨강</option>
+		    <option value="blue">파랑</option>
+		    <option value="green">초록</option>
+		    <option value="yellow">노랑</option>
+		</select>
+		
 		<input class="" name="b_image"  type="hidden" placeholder="이미지경로"  value="${BOOKS.b_image}">
 		<input class="" name="b_title" id="title" placeholder="책 제목" value="${BOOKS.b_title}">
 		<c:if test="${empty BOOKS.b_title}"><div>검색</div></c:if>
@@ -58,6 +66,7 @@ section {
 		<input class="" name="b_publisher" placeholder="출판사"  value="${BOOKS.b_publisher}"> 
 		<input class="" name="b_description" placeholder="설명"  value="${BOOKS.b_description}">
 		<input class="" name="b_link" placeholder="판매링크"  value="${BOOKS.b_link}">
+		<input class="" name="b_comment" placeholder="후기"  value="${BOOKS.b_comment}"> 
 		<input class="" name="b_letter" placeholder="기억에 남는 구절"  value="${BOOKS.b_link}"> 
 		<input class="" name="b_price" placeholder="가격"  value="${BOOKS.b_price}"> 
 		<input class="" name="b_page" placeholder="읽은 페이지"  value="${BOOKS.b_page}">

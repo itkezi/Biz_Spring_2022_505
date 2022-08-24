@@ -16,6 +16,7 @@ import lombok.ToString;
 public class BookVO {
 
 	private Long seq;
+	private String b_isbn;
 	private String b_username;
 	private String b_image;
 	private String b_title;
@@ -23,10 +24,13 @@ public class BookVO {
 	private String b_publisher;
 	private String b_description;
 	private String b_link;
+	private String b_comment;
 	private String b_letter;
 	private String b_price;
 	private String b_page;
 	private boolean b_comp;
+	
+	private String b_color;
 	
 	
 

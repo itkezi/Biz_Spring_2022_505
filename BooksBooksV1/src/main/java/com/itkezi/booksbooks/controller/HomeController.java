@@ -33,7 +33,12 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
+	public String home(Principal principal, Model model) {
+		
+		List<BookVO> bookList = bookService.findByUsername(principal.getName());
+		
+		model.addAttribute("BOOKS",bookList);
+		
 		return "home";
 	}
 	
